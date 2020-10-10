@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <iostream>
+using namespace std;
 
 /// Node of a tree containing an integer at each node
 class IntTree {
@@ -20,4 +22,6 @@ public:
 
     void addAsLastSon(IntTree* newSon); ///< Add newSon as right-most son
     void removeLastSon(); ///< Remove right-most son of this node
+
+    void display(string prefix = "", string indent = "  ");
 };
