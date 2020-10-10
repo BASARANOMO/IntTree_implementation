@@ -58,3 +58,44 @@ void IntTree::display(string prefix, string indent) {
 		}
 	}
 }
+
+void IntTree::recursivePreOrder() {
+	cout << data << " ";
+	int nbrSons = nbSons();
+	if (nbrSons > 0) {
+		for (int i = 0; i < nbrSons; i++) {
+			getSon(i)->recursivePreOrder();
+		}
+	}
+}
+
+void IntTree::iterativePreOrder() {
+	stack<IntTree*> nodeStk;
+	nodeStk.push(this);
+	while (nodeStk.empty() == false) {
+		IntTree* node = nodeStk.top();
+		cout << node->getData() << " ";
+		nodeStk.pop();
+
+		int nbrSons = node->nbSons();
+		if (nbrSons > 0) {
+			for (int i = 0; i < nbrSons; i++) {
+				nodeStk.push(node->getSon(nbrSons - i - 1));
+			}
+		}
+	}
+}
+
+void IntTree::recursivePostOrder() {
+	int nbrSons = nbSons();
+	if (nbrSons > 0) {
+		for (int i = 0; i < nbrSons; i++) {
+			getSon(i)->recursivePostOrder();
+		}
+	}
+	cout << data << " ";
+}
+
+void IntTree::iterativePostOrder() {
+
+}

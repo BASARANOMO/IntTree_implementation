@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <stack>
 #include <iostream>
 using namespace std;
 
@@ -24,4 +25,17 @@ public:
     void removeLastSon(); ///< Remove right-most son of this node
 
     void display(string prefix = "", string indent = "  ");
+
+    //bonus
+    // depth first search (profondeur d'abord)
+    void recursivePreOrder();  // similar to display()
+    void iterativePreOrder();  // using stack
+    void recursivePostOrder();
+    void iterativePostOrder();
+    
+    // tree search
+    //void breadthFirstSearch();
+    //void depthFisrtSearch();
+
+    //int minDepth();
 };

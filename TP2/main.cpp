@@ -11,6 +11,12 @@ int main() {
 	root->getSon(1)->addAsLastSon(new IntTree(17));
 	root->getSon(1)->getSon(0)->addAsLastSon(new IntTree(15));
 	root->display("* ");
+	cout << "Recursive pre-order: ";
+	root->recursivePreOrder();
+	cout << endl << "Iterative pre-order: ";
+	root->iterativePreOrder();
+	cout << endl << "Recursive post-order: ";
+	root->recursivePostOrder();
 	delete root;
 	return 0;
 }
