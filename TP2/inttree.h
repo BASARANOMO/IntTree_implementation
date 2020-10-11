@@ -1,7 +1,15 @@
+// @Author: ZHANG Mofan
+// @Edit time: 10/07/2020
+//             10/10/2020
+//             10/11/2020
+
+
 #pragma once
 #include <vector>
 #include <stack>
+#include <queue>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 /// Node of a tree containing an integer at each node
@@ -26,16 +34,24 @@ public:
 
     void display(string prefix = "", string indent = "  ");
 
-    //bonus
+    //bonus Exercice 5
     // depth first search (profondeur d'abord)
     void recursivePreOrder();  // similar to display()
+    vector<int> recursivePreOrderVec();
     void iterativePreOrder();  // using stack
+    vector<int> iterativePreOrderVec();
     void recursivePostOrder();
-    void iterativePostOrder();
+    vector<int> recursivePostOrderVec();
+    void iterativePostOrder();  // two stacks version
+    vector<int> iterativePostOrderVec();
     
-    // tree search
-    //void breadthFirstSearch();
-    //void depthFisrtSearch();
+    // breadth first search (largeur d'abord)
+    void iterativeBFS();  // using queue
+    vector<int> iterativeBFSVec();
 
-    //int minDepth();
+    // max tree depth
+    int maxDepth();  // time complexicity: O(N); space complexicity: O(1)
+
+    // min tree depth
+    int minDepth();  // BFS (largeur d'abord)
 };
