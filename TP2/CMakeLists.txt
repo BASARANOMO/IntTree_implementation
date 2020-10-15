@@ -1,0 +1,1 @@
+add_executable(inttree main.cpp inttree.h inttree.cpp)

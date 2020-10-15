@@ -23,6 +23,9 @@ IntTree::~IntTree() {
 }
 
 int IntTree::getData() const {
+	if (!this) {  // if this is a nullptr, throw error
+		throw "NULL pointer has no data!";
+	}
 	return data;
 }
 
@@ -35,14 +38,23 @@ int IntTree::nbSons() const {
 }
 
 void IntTree::setSon(int pos, IntTree* newSon) {
+	if ((pos < 0) || (pos > (nbSons() - 1))) {
+		throw "Method setSon() error. Out of range position!";
+	}
 	sons[pos] = newSon;
 }
 
 IntTree* IntTree::getSon(int pos) {
+	if ((pos < 0) || (pos > (nbSons()-1))) {
+		return nullptr;  // return a NULL pointer if get an out-of-range index
+	}
 	return sons[pos];
 }
 
 const IntTree* IntTree::getSon(int pos) const {
+	if ((pos < 0) || (pos > (nbSons() - 1))) {
+		return nullptr;  // return a NULL pointer if get an out-of-range index
+	}
 	return sons[pos];
 }
 
@@ -51,6 +63,9 @@ void IntTree::addAsLastSon(IntTree* newSon) {
 }
 
 void IntTree::removeLastSon() {
+	if (nbSons() <= 0) {  // error removing node from an empty vector
+		throw "Method removeLastSon() error. This node has no son to be removed!";
+	}
 	sons.pop_back();
 }
 

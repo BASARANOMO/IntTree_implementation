@@ -1,5 +1,2 @@
-﻿  inttree.cpp
-  main.cpp
-  Generating Code...
-D:\ENPC\S5\PRALG\TP\TP2\TP2\inttree.cpp(260): warning C4715: 'IntTree::minDepth': not all control paths return a value
+﻿  main.cpp
   TP2.vcxproj -> D:\ENPC\S5\PRALG\TP\TP2\Debug\TP2.exe

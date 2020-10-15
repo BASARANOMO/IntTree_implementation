@@ -10,6 +10,7 @@
 #include <queue>
 #include <iostream>
 #include <algorithm>
+#include <errno.h>
 using namespace std;
 
 /// Node of a tree containing an integer at each node
